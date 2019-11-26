@@ -1,10 +1,9 @@
 {
-  "name": "primereact",
-  "version": "3.3.3-SNAPSHOT",
-  "homepage": "/primereact",
+  "name": "vsq-datatable",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/primefaces/primereact.git"
+    "url": "https://github.com/m3rlin94/primereact/tree/custom-datatable"
   },
   "license": "MIT",
   "devDependencies": {

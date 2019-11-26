@@ -1077,35 +1077,33 @@ export class DataTable extends Component {
     }
 
     processData(localState) {
-        let data = this.props.value;
+      let data = this.props.value;
 
-        if(!this.props.lazy) {
-            if(data && data.length) {
-                let sortField = (localState && localState.sortField) || this.getSortField();
-                let sortOrder = (localState && localState.sortOrder) || this.getSortOrder();
-                let multiSortMeta = (localState && localState.multiSortMeta) || this.getMultiSortMeta();
-                
-                if(sortField || multiSortMeta) {
-                  if(this.props.sortMode === 'single'){
-                    if (!this.props.disableDefaultSort) {
-                      data = this.sortSingle(data, sortField, sortOrder);
-                    }
-                  }  
-                  else if(this.props.sortMode === 'multiple') {
-                    if (!this.props.disableDefaultSort) {
-                      data = this.sortMultiple(data, multiSortMeta);
-                    }
-                  }
-
-                let localFilters = (localState && localState.filters) || this.getFilters();
-                if (localFilters || this.props.globalFilter) {
-                    data = this.filterLocal(data, localFilters);
-                }
+      if(!this.props.lazy) {
+        if(data && data.length) {
+          let sortField = (localState && localState.sortField) || this.getSortField();
+          let sortOrder = (localState && localState.sortOrder) || this.getSortOrder();
+          let multiSortMeta = (localState && localState.multiSortMeta) || this.getMultiSortMeta();
+            
+          if(sortField || multiSortMeta) {
+            if(this.props.sortMode === 'single'){
+              if (!this.props.disableDefaultSort) {
+                data = this.sortSingle(data, sortField, sortOrder);
+              }
+            }  
+            else if(this.props.sortMode === 'multiple') {
+              if (!this.props.disableDefaultSort) {
+                data = this.sortMultiple(data, multiSortMeta);
+              }
+            }
+            let localFilters = (localState && localState.filters) || this.getFilters();
+            if (localFilters || this.props.globalFilter) {
+                data = this.filterLocal(data, localFilters);
             }
           }
         }
-
-        return data;
+      }
+      return data;
     }
 
     isAllSelected() {

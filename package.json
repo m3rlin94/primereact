@@ -1,6 +1,7 @@
 {
   "name": "vsq-datatable",
   "version": "0.1.0",
+  "description": "This is an updated version of the datatable component provided by Primereact library. This datatable exposes a new prop to control default sorting. When a custom onSort function is provided user can choose to use this new prop called disableDefaultSort which would disable the default sort and only use the custom sort provided",
   "repository": {
     "type": "git",
     "url": "https://github.com/m3rlin94/primereact/tree/vsq-datatable"
